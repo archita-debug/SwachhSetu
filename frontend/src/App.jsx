@@ -18,7 +18,7 @@ function Protected({ children }) {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/SwachhSetu/">
+    <BrowserRouter>
       <Routes>
         <Route path="/login"    element={<Login />} />
         <Route path="/register" element={<Register />} />
