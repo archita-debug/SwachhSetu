@@ -6,7 +6,7 @@ import './Auth.css'
 export default function Register() {
   const { register } = useAuth()
   const navigate = useNavigate()
-  const [form, setForm]       = useState({ name: '', email: '', password: '', role: 'Citizen' })
+  const [form, setForm]       = useState({ name: '', email: '', password: '', role: 'citizen' })
   const [error, setError]     = useState('')
   const [loading, setLoading] = useState(false)
   const [showPw, setShowPw]   = useState(false)
@@ -141,16 +141,16 @@ export default function Register() {
                 <div className="role-selector">
                   <button
                     type="button"
-                    className={`role-btn ${form.role === 'Citizen' ? 'active' : ''}`}
-                    onClick={() => setForm(f => ({ ...f, role: 'Citizen' }))}
+                    className={`role-btn ${form.role === 'citizen' ? 'active' : ''}`}
+                    onClick={() => setForm(f => ({ ...f, role: 'citizen' }))}
                   >
                     <span>🌱</span>
                     <span>Citizen</span>
                   </button>
                   <button
                     type="button"
-                    className={`role-btn ${form.role === 'Authority' ? 'active' : ''}`}
-                    onClick={() => setForm(f => ({ ...f, role: 'Authority' }))}
+                    className={`role-btn ${form.role === 'authority' ? 'active' : ''}`}
+                    onClick={() => setForm(f => ({ ...f, role: 'authority' }))}
                   >
                     <span>🏛</span>
                     <span>Authority</span>
