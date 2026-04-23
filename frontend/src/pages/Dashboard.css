@@ -1,0 +1,63 @@
+.dashboard { max-width: 860px; }
+
+.hero-card {
+  background: linear-gradient(135deg, var(--card) 0%, var(--card2) 100%);
+  position: relative; overflow: hidden;
+}
+.hero-card::after {
+  content: '♻'; position: absolute; right: 1.5rem; top: 50%;
+  transform: translateY(-50%); font-size: 5rem; opacity: 0.04; pointer-events: none;
+}
+.hero-top {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+}
+.hero-status {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.78rem; color: var(--g-primary); font-weight: 600; margin-top: 0.3rem;
+}
+.status-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--g-primary);
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero-coins { text-align: center; }
+.coin-big { font-size: 1.8rem; }
+
+.waste-row {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0.5rem; margin-top: 1rem;
+  background: rgba(0,0,0,0.25); border-radius: var(--radius-sm); padding: 0.75rem;
+}
+.waste-item { text-align: center; }
+
+.training-alert {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: rgba(245,197,24,0.07);
+  border: 1px solid rgba(245,197,24,0.22);
+  border-radius: var(--radius); padding: 0.75rem 1rem;
+  cursor: pointer; transition: background 0.15s;
+}
+.training-alert:hover { background: rgba(245,197,24,0.11); }
+
+.qa-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 0.75rem;
+}
+.qa-card {
+  background: var(--card2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1rem 0.75rem;
+  text-align: center; cursor: pointer; transition: all 0.15s;
+}
+.qa-card:hover { border-color: var(--g-primary); transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  .waste-row { grid-template-columns: 1fr 1fr; }
+  .qa-grid   { grid-template-columns: 1fr 1fr; }
+  .hero-top { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .hero-coins { text-align: left; margin-top: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+  .coin-big { font-size: 1.5rem; }
+}
+@media (max-width: 480px) {
+  .waste-row { grid-template-columns: 1fr; }
+  .qa-grid   { grid-template-columns: 1fr; }
+}
